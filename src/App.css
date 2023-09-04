@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "ubuntu";
+  src: url("./assets/fonts/Ubuntu-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "ubuntu-medium";
+  src: url("./assets/fonts/Ubuntu-Medium.ttf") format("ttf");
+}
+@font-face {
+  font-family: "ubuntu-bold";
+  src: url("./assets/fonts/Ubuntu-Bold.ttf") format("ttf");
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  --color-1: hsl(213, 96%, 18%);
+  --color-2: hsl(243, 100%, 62%);
+  --color-3: hsl(228, 100%, 84%);
+  --color-4: hsl(206, 94%, 87%);
+  --color-5: hsl(354, 84%, 57%);
+  --color-6: hsl(231, 11%, 63%);
+  --color-7: hsl(229, 24%, 87%);
+  --color-8: hsl(217, 100%, 97%);
+  --color-9: hsl(231, 100%, 99%);
+  --color-10: hsl(0, 0%, 100%);
+  --family: "ubuntu", sans-serif;
+  --family-medium: "ubuntu-medium", sans-serif;
+  --family-bold: "ubuntu-bold", sans-serif;
+  --paragraph: 16px;
+  --gap-l: 6rem;
+  --gap-s: 0.825rem;
+  --gap: 1.25rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--family);
+  max-width: 1440px;
+  background: var(--color-8);
+  height: 100vh;
+}
+p {
+  margin: 0;
+  padding: 0;
+  font-size: var(--paragraph);
+}
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.card {
+  display: flex;
+  gap: var(--gap-l);
+  border-radius: 10px;
+  padding: 1rem;
+  background: var(--color-10);
+}
