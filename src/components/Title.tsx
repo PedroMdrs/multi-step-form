@@ -1,11 +1,13 @@
 import React from "react";
+import styles from "../css modules/Title.module.css";
 
-const style: React.CSSProperties = {
-  color: "var(--color-1)",
-  fontFamily: "var(--family-bold)",
-};
-const Title = ({ text }: { text: string }) => {
-  return <h1 style={style}>{text}</h1>;
+const Title = ({ title, subtitle }: { title: string; subtitle?: string }) => {
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.title}>{title}</h1>
+      <h2 className={styles.subtitle}>{subtitle}</h2>
+    </div>
+  );
 };
 
 export default Title;

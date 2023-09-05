@@ -1,19 +1,57 @@
-import Button from "./Button";
 import Input from "./Input";
+import styles from "../css modules/Form.module.css";
 
-const style: React.CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  gap: "var(--gap)",
-};
-const Form = () => {
+interface Inputs {
+  name: string;
+  setName: React.Dispatch<React.SetStateAction<string>>;
+  email: string;
+  setEmail: React.Dispatch<React.SetStateAction<string>>;
+  phone: string;
+  setPhone: React.Dispatch<React.SetStateAction<string>>;
+  error: boolean;
+}
+const Form = ({
+  name,
+  setName,
+  email,
+  setEmail,
+  phone,
+  setPhone,
+  error,
+}: Inputs) => {
   return (
     <div>
-      <form style={style} action="">
-        <Input label="Name" type="text" required />
-        <Input label="Email Address" type="email" required />
-        <Input label="Phone Number" type="number" required />
-        <Button style={{ marginTop: "3rem" }}>Next Step</Button>
+      <form className={styles.container} action="">
+        <Input
+          className={error ? "activeError" : ""}
+          error={error}
+          setValue={setName}
+          value={name}
+          placeholder="e.g.Stephen King"
+          label="Name"
+          type="text"
+          required
+        />
+        <Input
+          className={error ? "activeError" : ""}
+          error={error}
+          value={email}
+          setValue={setEmail}
+          placeholder="e.g. stephenking@lorem.com"
+          label="Email Address"
+          type="email"
+          required
+        />
+        <Input
+          className={error ? "activeError" : ""}
+          error={error}
+          value={phone}
+          setValue={setPhone}
+          placeholder="e.g. +1 234 567 890"
+          label="Phone Number"
+          type="number"
+          required
+        />
       </form>
     </div>
   );

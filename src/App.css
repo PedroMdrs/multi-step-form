@@ -1,14 +1,14 @@
 @font-face {
   font-family: "ubuntu";
-  src: url("./assets/fonts/Ubuntu-Regular.ttf") format("ttf");
+  src: url("../public/assets/fonts/Ubuntu-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "ubuntu-medium";
-  src: url("./assets/fonts/Ubuntu-Medium.ttf") format("ttf");
+  src: url("../public/assets/fonts/Ubuntu-Medium.ttf") format("truetype");
 }
 @font-face {
   font-family: "ubuntu-bold";
-  src: url("./assets/fonts/Ubuntu-Bold.ttf") format("ttf");
+  src: url("../public/assets/fonts/Ubuntu-Bold.ttf") format("truetype");
 }
 * {
   box-sizing: border-box;
@@ -57,6 +57,7 @@ img {
   width: 100%;
 }
 a {
+  cursor: pointer;
   text-decoration: none;
 }
 ul {
@@ -64,10 +65,31 @@ ul {
   padding: 0px;
   margin: 0px;
 }
+label {
+  display: inline;
+  font-family: var(--family-medium);
+}
+input::placeholder {
+  color: var(--color-6);
+  font-family: var(--family);
+}
 .card {
+  padding: var(--gap-s) var(--gap-l) var(--gap-s) var(--gap-s);
+  width: 1000px;
   display: flex;
   gap: var(--gap-l);
   border-radius: 10px;
-  padding: 1rem;
   background: var(--color-10);
+}
+
+.active {
+  background-color: var(--color-4);
+  color: var(--color-1) !important;
+  border: none !important;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  width: 100%;
 }

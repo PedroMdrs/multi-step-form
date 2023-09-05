@@ -1,0 +1,53 @@
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+}
+.buttonsContainer button:nth-child(1) {
+  background: none;
+  color: var(--color-6);
+}
+.buttonsContainer button:nth-child(1):hover {
+  color: var(--color-1);
+}
+
+.addonsOptions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.addonsOptions > * {
+  border: 1px solid var(--color-7);
+  padding: var(--gap) var(--gap);
+  border-radius: 10px;
+}
+.addonsOptions > *:hover {
+  cursor: pointer;
+  background-color: rgba(71, 61, 255, 0.1);
+  border-color: var(--color-2);
+}
+.addon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-l);
+}
+.addon > div {
+  display: flex;
+  gap: var(--gap);
+}
+
+.addonDesc {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.addonDesc p {
+  font-family: var(--family-medium);
+  color: var(--color-1);
+}
+.addonDesc span {
+  color: var(--color-6);
+}

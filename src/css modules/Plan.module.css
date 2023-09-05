@@ -1,0 +1,124 @@
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: fit-content;
+  width: 100%;
+}
+.CardsContainer {
+  display: flex;
+  gap: var(--gap);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: var(--gap) var(--gap);
+  width: 150px;
+  border: 1px solid var(--color-7);
+  border-radius: 10px;
+}
+.card:hover {
+  cursor: pointer;
+  background-color: rgba(71, 61, 255, 0.1);
+  border-color: var(--color-2);
+}
+.card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.card p {
+  font-family: var(--family-medium);
+  color: var(--color-1);
+}
+.card span {
+  color: var(--color-6);
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.sliderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--gap-s);
+  gap: var(--gap);
+  width: 100%;
+  background: rgba(71, 61, 255, 0.1);
+  border-radius: 10px;
+}
+.sliderContainer span {
+  color: var(--color-1);
+  font-family: var(--family-medium);
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--color-9);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--color-1);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--color-1);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+}
+.buttonsContainer button:nth-child(1) {
+  background: none;
+  color: var(--color-6);
+}
+.buttonsContainer button:nth-child(1):hover {
+  color: var(--color-1);
+}

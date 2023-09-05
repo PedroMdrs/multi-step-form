@@ -1,0 +1,16 @@
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+}
+.summaryOptionsContainer {
+  background: rgba(71, 61, 255, 0.1);
+}
+.buttonsContainer button:nth-child(1) {
+  background: none;
+  color: var(--color-6);
+}
+.buttonsContainer button:nth-child(1):hover {
+  color: var(--color-1);
+}

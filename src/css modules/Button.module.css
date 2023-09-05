@@ -6,7 +6,9 @@
   border-radius: 10px;
   cursor: pointer;
   align-self: end;
+  font-family: var(--family-bold);
+  font-size: var(--paragraph);
 }
 .button:hover {
-  background: hsl(213, 87%, 28%);
+  background: hsl(213, 82%, 33%);
 }
