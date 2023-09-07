@@ -3,19 +3,10 @@ import styles from "../css modules/Summary.module.css";
 import Button from "./Button";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useNavigationProvider } from "../context/NavigationContext";
-import React from "react";
 
 const Summary = () => {
-  const { addons, plan, period, price } = useNavigationProvider();
-  const [onlineServicePrice, setOnlineServicePrice] = React.useState(1);
-  const [storagePrice, setStoragePrice] = React.useState(2);
-  const [profilePrice, setProfilePrice] = React.useState(2);
+  const { addons, plan, period, price, addonPrice } = useNavigationProvider();
 
-  React.useEffect(() => {
-    !addons.onlineService ? setOnlineServicePrice(0) : "";
-    !addons.largerStorage ? setStoragePrice(0) : "";
-    !addons.customizableProfile ? setProfilePrice(0) : "";
-  }, [addons.onlineService, addons.largerStorage, addons.customizableProfile]);
   const navigate = useNavigate();
   return (
     <div className="container">
@@ -31,14 +22,23 @@ const Summary = () => {
             </p>
             <NavLink to={"/plan"}>Change</NavLink>
           </div>
-          <span>{`$${price[plan]}/mo`}</span>
+          {period === "Monthly" ? (
+            <span>{`+$${price[plan].monthly}/mo`}</span>
+          ) : (
+            <span>{`+$${price[plan].yearly}/yr`}</span>
+          )}
         </div>
         <hr />
 
         <div className={styles.addonContainer}>
           {addons.onlineService ? (
             <div>
-              <p>Online Service</p> <span>{`+${onlineServicePrice}$/mo`}</span>
+              <p>Online Service</p>{" "}
+              {period === "Monthly" ? (
+                <span>{`+${addonPrice.onlineService.monthly}$/mo`}</span>
+              ) : (
+                <span>{`+${addonPrice.onlineService.yearly}$/yr`}</span>
+              )}
             </div>
           ) : (
             ""
@@ -46,7 +46,12 @@ const Summary = () => {
 
           {addons.largerStorage ? (
             <div>
-              <p>Larger Storage</p> <span>{`+${storagePrice}$/mo`}</span>
+              <p>Larger Storage</p>{" "}
+              {period === "Monthly" ? (
+                <span>{`+${addonPrice.largerStorage.monthly}$/mo`}</span>
+              ) : (
+                <span>{`+${addonPrice.onlineService.yearly}$/yr`}</span>
+              )}
             </div>
           ) : (
             ""
@@ -54,7 +59,12 @@ const Summary = () => {
 
           {addons.customizableProfile ? (
             <div>
-              <p>Customizable Profile</p> <span>{`+${profilePrice}$/mo`}</span>
+              <p>Customizable Profile</p>{" "}
+              {period === "Monthly" ? (
+                <span>{`+${addonPrice.customizableProfile.monthly}$/mo`}</span>
+              ) : (
+                <span>{`+${addonPrice.customizableProfile.yearly}$/yr`}</span>
+              )}
             </div>
           ) : (
             ""
@@ -63,13 +73,30 @@ const Summary = () => {
       </div>
       <div className={styles.totalContainer}>
         <p>Total (per month)</p>
-        <span>{`+$${
-          profilePrice + storagePrice + onlineServicePrice + price[plan]
-        }/mo`}</span>
+        {period === "Monthly" ? (
+          <span>{`+$${
+            addonPrice.onlineService.monthly +
+            addonPrice.largerStorage.monthly +
+            addonPrice.customizableProfile.monthly +
+            price[plan].monthly
+          }/mo`}</span>
+        ) : (
+          <span>{`+$${
+            addonPrice.onlineService.yearly +
+            addonPrice.largerStorage.yearly +
+            addonPrice.customizableProfile.yearly +
+            price[plan].yearly
+          }/mo`}</span>
+        )}
       </div>
       <div className={styles.buttonsContainer}>
         <Button onClick={() => navigate("/addons")}>Go Back</Button>
-        <Button>Next Step</Button>
+        <Button
+          onClick={() => navigate("/thanks")}
+          style={{ backgroundColor: "var(--color-2)" }}
+        >
+          Confirm
+        </Button>
       </div>
     </div>
   );

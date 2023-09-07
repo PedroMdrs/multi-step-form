@@ -3,7 +3,7 @@
   background: var(--color-1);
   color: var(--color-7);
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   align-self: end;
   font-family: var(--family-bold);
@@ -11,4 +11,10 @@
 }
 .button:hover {
   background: hsl(213, 82%, 33%);
+}
+
+@media (max-width: 1020px) {
+  .button {
+    padding: var(--gap-s) 1rem;
+  }
 }

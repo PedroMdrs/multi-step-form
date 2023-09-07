@@ -30,7 +30,11 @@ const Plan = () => {
             <Arcade />
             <div>
               <p>Arcade</p>
-              <span>{`$${price.Arcade}/mo`}</span>
+              {period === "Monthly" ? (
+                <span>{`$${price.Arcade.monthly}/mo`}</span>
+              ) : (
+                <span>{`$${price.Arcade.yearly}/yr`}</span>
+              )}
             </div>
           </div>
           <div
@@ -42,7 +46,11 @@ const Plan = () => {
             <AdvancedIcon />
             <div>
               <p>Advanced</p>
-              <span>{`$${price.Advanced}/mo`}</span>
+              {period === "Monthly" ? (
+                <span>{`$${price.Advanced.monthly}/mo`}</span>
+              ) : (
+                <span>{`$${price.Advanced.yearly}/yr`}</span>
+              )}
             </div>
           </div>
           <div
@@ -54,7 +62,11 @@ const Plan = () => {
             <ProIcon />
             <div>
               <p>Pro</p>
-              <span>{`$${price.Pro}/mo`}</span>
+              {period === "Monthly" ? (
+                <span>{`$${price.Pro.monthly}/mo`}</span>
+              ) : (
+                <span>{`$${price.Pro.yearly}/yr`}</span>
+              )}
             </div>
           </div>
         </div>

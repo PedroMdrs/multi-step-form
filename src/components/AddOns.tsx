@@ -5,7 +5,7 @@ import Title from "./Title";
 import { useNavigationProvider } from "../context/NavigationContext";
 
 const AddOns = () => {
-  const { addons, setAddons, addonPrice } = useNavigationProvider();
+  const { addons, setAddons, addonPrice, period } = useNavigationProvider();
 
   function addOrRemoveAddon(
     value: "onlineService" | "largerStorage" | "customizableProfile"
@@ -58,7 +58,11 @@ const AddOns = () => {
               <span>Access to multiplayer games</span>
             </div>
           </div>
-          <p>{addonPrice["onlineService"]}</p>
+          {period === "Monthly" ? (
+            <p>+${addonPrice["onlineService"].monthly}/mo</p>
+          ) : (
+            <p>+${addonPrice["onlineService"].yearly}/yr</p>
+          )}
         </div>
         <div
           onClick={() => addOrRemoveAddon("largerStorage")}
@@ -78,7 +82,11 @@ const AddOns = () => {
               <span>Extra 1TB of cloud save</span>
             </div>
           </div>
-          <p>{addonPrice["largerStorage"]}</p>
+          {period === "Monthly" ? (
+            <p>+${addonPrice["largerStorage"].monthly}/mo</p>
+          ) : (
+            <p>+${addonPrice["largerStorage"].yearly}/yr</p>
+          )}
         </div>
         <div
           onClick={() => addOrRemoveAddon("customizableProfile")}
@@ -100,7 +108,11 @@ const AddOns = () => {
               <span>Custom theme on your profile</span>
             </div>
           </div>
-          <p>{addonPrice["customizableProfile"]}</p>
+          {period === "Monthly" ? (
+            <p>+${addonPrice["customizableProfile"].monthly}/mo</p>
+          ) : (
+            <p>+${addonPrice["customizableProfile"].yearly}/yr</p>
+          )}
         </div>
       </div>
       <div className={styles.buttonsContainer}>

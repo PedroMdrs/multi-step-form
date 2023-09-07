@@ -3,4 +3,15 @@
   flex-direction: row;
   justify-content: flex-end;
   flex: 1;
+  margin-top: 4rem;
+}
+@media (max-width: 1020px) {
+  .buttonsContainer {
+    background-color: var(--color-10);
+    padding: var(--gap);
+    position: absolute;
+    right: 0rem;
+    bottom: 0;
+    width: 100vw;
+  }
 }

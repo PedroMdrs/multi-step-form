@@ -84,6 +84,7 @@ input::placeholder {
   gap: var(--gap-l);
   border-radius: 10px;
   background: var(--color-10);
+  box-shadow: 0 4px 10px -2px var(--color-7);
 }
 
 .active {
@@ -92,7 +93,7 @@ input::placeholder {
   border: none !important;
 }
 .activePlan {
-  background: rgba(71, 61, 255, 0.1);
+  background: rgba(71, 61, 255, 0.03);
   border-color: var(--color-2);
 }
 .container {
@@ -100,4 +101,24 @@ input::placeholder {
   flex-direction: column;
   padding-bottom: 1rem;
   width: 100%;
+}
+@media (max-width: 1020px) {
+  .card {
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    background: var(--color-8);
+    gap: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  .container {
+    margin-top: -4rem;
+    width: 91%;
+    background-color: var(--color-10);
+    padding: 0 1.5rem 2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px -2px var(--color-7);
+  }
 }

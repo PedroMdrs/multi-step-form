@@ -27,14 +27,14 @@ interface tabContext {
   addonPrice: addonPrices;
 }
 interface planPrices {
-  Arcade: number;
-  Advanced: number;
-  Pro: number;
+  Arcade: { monthly: number; yearly: number };
+  Advanced: { monthly: number; yearly: number };
+  Pro: { monthly: number; yearly: number };
 }
 interface addonPrices {
-  onlineService: "+$1/mo";
-  largerStorage: "+$2/mo";
-  customizableProfile: "+$2/mo";
+  onlineService: { monthly: number; yearly: number };
+  largerStorage: { monthly: number; yearly: number };
+  customizableProfile: { monthly: number; yearly: number };
 }
 type plan = "Arcade" | "Advanced" | "Pro";
 export type periodType = "Monthly" | "Yearly";
@@ -61,14 +61,14 @@ export const NavigationContext = React.createContext<tabContext>({
   period: "Monthly",
   setPeriod: () => {},
   price: {
-    Arcade: 9,
-    Advanced: 12,
-    Pro: 15,
+    Arcade: { monthly: 9, yearly: 90 },
+    Advanced: { monthly: 12, yearly: 120 },
+    Pro: { monthly: 15, yearly: 150 },
   },
   addonPrice: {
-    onlineService: "+$1/mo",
-    largerStorage: "+$2/mo",
-    customizableProfile: "+$2/mo",
+    onlineService: { monthly: 1, yearly: 10 },
+    largerStorage: { monthly: 2, yearly: 20 },
+    customizableProfile: { monthly: 2, yearly: 20 },
   },
 });
 export const useNavigationProvider = () => {
@@ -91,14 +91,14 @@ export const NavigationStorage = ({ children }: React.PropsWithChildren) => {
     largerStorage: false,
   });
   const [price, setPrice] = React.useState<planPrices>({
-    Arcade: 9,
-    Advanced: 12,
-    Pro: 15,
+    Arcade: { monthly: 9, yearly: 90 },
+    Advanced: { monthly: 12, yearly: 120 },
+    Pro: { monthly: 15, yearly: 150 },
   });
   const [addonPrice, setAddonPrice] = React.useState<addonPrices>({
-    onlineService: "+$1/mo",
-    largerStorage: "+$2/mo",
-    customizableProfile: "+$2/mo",
+    onlineService: { monthly: 1, yearly: 10 },
+    largerStorage: { monthly: 2, yearly: 20 },
+    customizableProfile: { monthly: 2, yearly: 20 },
   });
   return (
     <NavigationContext.Provider

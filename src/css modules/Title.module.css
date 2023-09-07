@@ -13,6 +13,7 @@
 .subtitle {
   color: var(--color-6);
   font-family: var(--family-medium);
-  font-size: 0.975rem;
+  font-size: var(--paragraph);
   font-weight: 500;
+  line-height: 1.5rem;
 }
