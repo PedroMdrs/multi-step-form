@@ -23,7 +23,7 @@ const Form = ({
     <div>
       <form className={styles.container} action="">
         <Input
-          className={error ? "activeError" : ""}
+          inputErrorClass={styles.activeError}
           error={error}
           setValue={setName}
           value={name}
@@ -33,7 +33,7 @@ const Form = ({
           required
         />
         <Input
-          className={error ? "activeError" : ""}
+          inputErrorClass={styles.activeError}
           error={error}
           value={email}
           setValue={setEmail}
@@ -43,7 +43,7 @@ const Form = ({
           required
         />
         <Input
-          className={error ? "activeError" : ""}
+          inputErrorClass={styles.activeError}
           error={error}
           value={phone}
           setValue={setPhone}

@@ -7,27 +7,33 @@ const Input = ({
   value,
   setValue,
   error,
+  inputErrorClass,
   ...props
 }: React.ComponentProps<"input"> & {
   label: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
   error: boolean;
+  inputErrorClass?: string;
 }) => {
+  React.useEffect(() => {
+    const storedValue = JSON.parse(localStorage.getItem(label) || "");
+    setValue(storedValue);
+  }, [label, setValue]);
   return (
     <div className={styles.container}>
       <div className={styles.labelContainer}>
         <label htmlFor={label} style={{ color: "var(--color-1)" }}>
           {label}
         </label>{" "}
-        {error && value === "" ? (
-          <Error className={styles.error}> This Field is required </Error>
-        ) : (
-          ""
-        )}
+        {error && value === "" ? <Error> This Field is required </Error> : ""}
       </div>
       <input
+        className={error && value === "" ? inputErrorClass : ""}
         type={type}
-        onChange={({ target }) => setValue(target.value)}
+        onChange={({ target }) => {
+          setValue(target.value);
+          localStorage.setItem(label, JSON.stringify(target.value));
+        }}
         id={label}
         name={label}
         value={value}

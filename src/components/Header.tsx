@@ -53,21 +53,32 @@ const SideNav = () => {
           </div>
         </li>
         <li>
-          <NavLink className={tab === "Addons" ? "active" : ""} to={"/addons"}>
-            3
-          </NavLink>
+          {name !== "" && email !== "" && phone !== "" ? (
+            <NavLink
+              className={tab === "Addons" ? "active" : ""}
+              to={"/addons"}
+            >
+              3
+            </NavLink>
+          ) : (
+            <a className={tab === "Addons" ? "active" : ""}>3</a>
+          )}
           <div>
             <span>step 3</span>
             <p>add-ons</p>
           </div>
         </li>
         <li>
-          <NavLink
-            className={tab === "Summary" ? "active" : ""}
-            to={"/summary"}
-          >
-            4
-          </NavLink>
+          {name !== "" && email !== "" && phone !== "" ? (
+            <NavLink
+              className={tab === "Summary" ? "active" : ""}
+              to={"/summary"}
+            >
+              4
+            </NavLink>
+          ) : (
+            <a className={tab === "Summary" ? "active" : ""}>4</a>
+          )}
           <div>
             <span>step 4</span>
             <p>summary</p>

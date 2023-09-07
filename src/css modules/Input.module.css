@@ -14,13 +14,17 @@
   width: 100%;
 }
 .container input:hover,
-.container input:active {
-  border-color: var(--color-2);
+.container input:focus {
+  border-color: var(--color-2) !important;
   outline: none;
-  outline: 1px solid var(--color-6);
+  outline: 1px solid var(--color-6) !important;
 }
 
 .labelContainer {
   display: flex;
   justify-content: space-between;
+}
+
+.error {
+  color: blue;
 }

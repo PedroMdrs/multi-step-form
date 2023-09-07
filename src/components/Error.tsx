@@ -8,7 +8,7 @@ const Error = ({
     <span
       style={{
         color: "var(--color-5)",
-        fontFamily: "var(--family-medium)",
+        fontFamily: "var(--family-bold)",
         fontSize: "var(--paragraph)",
       }}
       {...props}

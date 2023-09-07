@@ -38,6 +38,18 @@
   display: flex;
   gap: var(--gap);
 }
+.addon > p {
+  color: var(--color-2);
+  font-family: var(--family);
+}
+.addon > div > input[type="checkbox"] {
+  width: 20px;
+  border: none;
+}
+.addonActive,
+.addon > div > input[type="checkbox"]:hover {
+  accent-color: var(--color-2);
+}
 
 .addonDesc {
   display: flex;

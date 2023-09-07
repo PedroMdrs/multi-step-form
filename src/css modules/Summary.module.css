@@ -5,7 +5,72 @@
   flex: 1;
 }
 .summaryOptionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-s);
   background: rgba(71, 61, 255, 0.1);
+  border-radius: 10px;
+  padding: var(--gap);
+}
+.summaryOptionsContainer hr {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-7);
+  border: none;
+}
+.planDesc {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.planDesc a {
+  width: fit-content;
+}
+.planDesc p {
+  color: var(--color-1);
+  font-family: var(--family-bold);
+}
+.planDesc > a:hover {
+  border-bottom: 2px solid var(--color-2);
+}
+.planDesc > a:visited {
+  color: var(--color-2);
+}
+.planContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.planContainer > span {
+  color: var(--color-1);
+  font-family: var(--family-medium);
+}
+.addonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.addonContainer > div {
+  display: flex;
+  justify-content: space-between;
+}
+.addonContainer > div > p {
+  color: var(--color-6);
+}
+.addonContainer > div > span {
+  color: var(--color-1);
+}
+.totalContainer {
+  padding: var(--gap);
+  display: flex;
+  justify-content: space-between;
+}
+.totalContainer > p {
+  color: var(--color-6);
+}
+.totalContainer > span {
+  font-size: 20px;
+  color: var(--color-2);
+  font-family: var(--family-bold);
 }
 .buttonsContainer button:nth-child(1) {
   background: none;

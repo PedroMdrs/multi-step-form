@@ -4,5 +4,5 @@
   gap: 1.5rem;
 }
 .activeError {
-  display: none;
+  border-color: var(--color-5) !important;
 }

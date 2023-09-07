@@ -5,8 +5,14 @@ import ProIcon from "./ProIcon";
 import styles from "../css modules/Plan.module.css";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import { useNavigationProvider } from "../context/NavigationContext";
 const Plan = () => {
+  type sliderType = "Monthly" | "Yearly";
   const navigate = useNavigate();
+  const { plan, setPlan, period, setPeriod, price } = useNavigationProvider();
+  function changePeriod(value: sliderType) {
+    setPeriod(value);
+  }
   return (
     <div className="container">
       <Title
@@ -15,32 +21,53 @@ const Plan = () => {
       />
       <div className={styles.optionsContainer}>
         <div className={styles.CardsContainer}>
-          <div className={styles.card}>
+          <div
+            className={
+              plan === "Arcade" ? `${styles.card} activePlan` : styles.card
+            }
+            onClick={() => setPlan("Arcade")}
+          >
             <Arcade />
             <div>
               <p>Arcade</p>
-              <span>$9/mo</span>
+              <span>{`$${price.Arcade}/mo`}</span>
             </div>
           </div>
-          <div className={styles.card}>
+          <div
+            className={
+              plan === "Advanced" ? `${styles.card} activePlan` : styles.card
+            }
+            onClick={() => setPlan("Advanced")}
+          >
             <AdvancedIcon />
             <div>
               <p>Advanced</p>
-              <span>$12/mo</span>
+              <span>{`$${price.Advanced}/mo`}</span>
             </div>
           </div>
-          <div className={styles.card}>
+          <div
+            className={
+              plan === "Pro" ? `${styles.card} activePlan` : styles.card
+            }
+            onClick={() => setPlan("Pro")}
+          >
             <ProIcon />
             <div>
               <p>Pro</p>
-              <span>$15/mo</span>
+              <span>{`$${price.Pro}/mo`}</span>
             </div>
           </div>
         </div>
         <div className={styles.sliderContainer}>
           <span>Monthly</span>
           <label className={styles.switch}>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              checked={period === "Yearly"}
+              onClick={() =>
+                changePeriod(period === "Monthly" ? "Yearly" : "Monthly")
+              }
+            />
             <span className={`${styles.round} ${styles.slider}`}></span>
           </label>
           <span>Yearly</span>

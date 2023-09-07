@@ -20,8 +20,6 @@
 }
 .card:hover {
   cursor: pointer;
-  background-color: rgba(71, 61, 255, 0.1);
-  border-color: var(--color-2);
 }
 .card > div {
   display: flex;
@@ -35,18 +33,6 @@
 .card span {
   color: var(--color-6);
 }
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
 
 .sliderContainer {
   display: flex;
@@ -55,13 +41,27 @@
   padding: var(--gap-s);
   gap: var(--gap);
   width: 100%;
-  background: rgba(71, 61, 255, 0.1);
+  background: rgba(71, 61, 255, 0.05);
   border-radius: 10px;
 }
+
 .sliderContainer span {
   color: var(--color-1);
   font-family: var(--family-medium);
 }
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
 .slider {
   position: absolute;
   cursor: pointer;
@@ -77,8 +77,8 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 17px;
+  width: 17px;
   left: 4px;
   bottom: 4px;
   background-color: var(--color-9);
@@ -86,7 +86,7 @@
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input + .slider {
   background-color: var(--color-1);
 }
 
@@ -95,12 +95,11 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
