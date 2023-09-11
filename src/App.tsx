@@ -12,16 +12,14 @@ const App = () => {
     <NavigationStorage>
       <BrowserRouter>
         <main>
-          <div className="card">
-            <Header />
-            <Routes>
-              <Route path="/" element={<PersonalInfo />}></Route>
-              <Route path="/plan" element={<Plan />}></Route>
-              <Route path="/addons" element={<AddOns />}></Route>
-              <Route path="/summary" element={<Summary />}></Route>
-              <Route path="/thanks" element={<Finish />}></Route>
-            </Routes>
-          </div>
+          <Header />
+          <Routes>
+            <Route path="/" element={<PersonalInfo />}></Route>
+            <Route path="/plan" element={<Plan />}></Route>
+            <Route path="/addons" element={<AddOns />}></Route>
+            <Route path="/summary" element={<Summary />}></Route>
+            <Route path="/thanks" element={<Finish />}></Route>
+          </Routes>
         </main>
       </BrowserRouter>
     </NavigationStorage>

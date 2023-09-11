@@ -1,6 +1,5 @@
 import Form from "../components/Form.tsx";
 import Title from "./Title.tsx";
-import styles from "../css modules/PersonalInfo.module.css";
 import Button from "./Button.tsx";
 import { useNavigate } from "react-router-dom";
 import { useNavigationProvider } from "../context/NavigationContext.tsx";
@@ -18,25 +17,29 @@ const PersonalInfo = () => {
     }
   }
   return (
-    <div className="container">
-      <Title
-        title="Personal Info"
-        subtitle="Please provide your name, email address, and phone number."
-      />
-      <Form
-        error={error}
-        email={email}
-        setEmail={setEmail}
-        name={name}
-        setName={setName}
-        phone={phone}
-        setPhone={setPhone}
-      />
-
-      <div className={styles.buttonsContainer}>
+    <>
+      <div className="card">
+        <div className="container">
+          <Title
+            title="Personal Info"
+            subtitle="Please provide your name, email address, and phone number."
+          />
+          <Form
+            error={error}
+            email={email}
+            setEmail={setEmail}
+            name={name}
+            setName={setName}
+            phone={phone}
+            setPhone={setPhone}
+          />
+        </div>
+      </div>
+      <div className="buttonsContainer">
+        <div></div>
         <Button onClick={nextPage}>Next Step</Button>
       </div>
-    </div>
+    </>
   );
 };
 
