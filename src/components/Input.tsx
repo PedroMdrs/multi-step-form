@@ -16,8 +16,10 @@ const Input = ({
   inputErrorClass?: string;
 }) => {
   React.useEffect(() => {
-    const storedValue = JSON.parse(localStorage.getItem(label) || "");
-    setValue(storedValue);
+    const storedValue = localStorage.getItem(label);
+    if (storedValue) {
+      setValue(JSON.parse(storedValue));
+    }
   }, [label, setValue]);
   return (
     <div className={styles.container}>
