@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../css modules/Title.module.css";
 
 const Title = ({ title, subtitle }: { title: string; subtitle?: string }) => {

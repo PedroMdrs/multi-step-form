@@ -89,11 +89,11 @@ const Plan = () => {
               <span>Yearly</span>
             </div>
           </div>
+        </div>{" "}
+        <div className="buttonsContainer">
+          <Button onClick={() => navigate("/")}>Go Back</Button>
+          <Button onClick={() => navigate("/addons")}>Next Step</Button>
         </div>
-      </div>
-      <div className="buttonsContainer">
-        <Button onClick={() => navigate("/")}>Go Back</Button>
-        <Button onClick={() => navigate("/addons")}>Next Step</Button>
       </div>
     </>
   );

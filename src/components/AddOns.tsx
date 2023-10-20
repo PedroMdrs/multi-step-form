@@ -124,10 +124,10 @@ const AddOns = () => {
             </div>
           </div>
         </div>
-      </div>{" "}
-      <div className="buttonsContainer">
-        <Button onClick={() => navigate("/plan")}>Go Back</Button>
-        <Button onClick={() => navigate("/summary")}>Next Step</Button>
+        <div className="buttonsContainer">
+          <Button onClick={() => navigate("/plan")}>Go Back</Button>
+          <Button onClick={() => navigate("/summary")}>Next Step</Button>
+        </div>
       </div>
     </>
   );

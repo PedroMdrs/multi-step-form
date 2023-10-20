@@ -92,15 +92,15 @@ const Summary = () => {
             )}
           </div>
         </div>
-      </div>
-      <div className="buttonsContainer">
-        <Button onClick={() => navigate("/addons")}>Go Back</Button>{" "}
-        <Button
-          onClick={() => navigate("/thanks")}
-          style={{ backgroundColor: "var(--color-2)" }}
-        >
-          Confirm
-        </Button>
+        <div className="buttonsContainer">
+          <Button onClick={() => navigate("/addons")}>Go Back</Button>{" "}
+          <Button
+            onClick={() => navigate("/thanks")}
+            style={{ backgroundColor: "var(--color-2)" }}
+          >
+            Confirm
+          </Button>
+        </div>
       </div>
     </>
   );

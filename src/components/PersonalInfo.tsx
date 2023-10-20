@@ -34,10 +34,10 @@ const PersonalInfo = () => {
             setPhone={setPhone}
           />
         </div>
-      </div>
-      <div className="buttonsContainer">
-        <div></div>
-        <Button onClick={nextPage}>Next Step</Button>
+        <div className="buttonsContainer">
+          <div></div>
+          <Button onClick={nextPage}>Next Step</Button>
+        </div>
       </div>
     </>
   );
